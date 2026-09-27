@@ -1,30 +1,27 @@
-USE CollegeDB;
-
-CREATE TABLE Department (
-    DepartmentID INT PRIMARY KEY,
-    DepartmentName VARCHAR(50)
-);
-
-CREATE TABLE Student (
-    StudentID INT PRIMARY KEY,
-    StudentName VARCHAR(50),
-    Gender VARCHAR(10),
-    DepartmentID INT
+CREATE TABLE Department(
+DepartmentID INT,
+DepartmentName VARCHAR(30)
 );
 
 INSERT INTO Department VALUES
-(101, 'Computer Science'),
-(102, 'Electronics'),
-(103, 'Mechanical');
+(101,'Computer Science'),
+(102,'Mathematics'),
+(103,'Physics');
+
+CREATE TABLE Student(
+StudentID INT,
+StudentName VARCHAR(20),
+DepartmentID INT
+);
 
 INSERT INTO Student VALUES
-(1001, 'Arun', 'Male', 101),
-(1002, 'Divya', 'Female', 102),
-(1003, 'Karthik', 'Male', 103);
+(1001,'Arun',101),
+(1002,'Divya',102),
+(1003,'Karthik',101),
+(1004,'Nisha',103);
 
-SELECT Student.StudentID,
-       Student.StudentName,
-       Department.DepartmentName
+SELECT Student.StudentName,
+Department.DepartmentName
 FROM Student
 INNER JOIN Department
 ON Student.DepartmentID = Department.DepartmentID;
