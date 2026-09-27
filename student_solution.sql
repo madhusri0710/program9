@@ -18,4 +18,4 @@ INSERT INTO Student VALUES
 (1001,'Arun',101),
 (1002,'Divya',102),
 (1003,'Karthik',101),
-(1004,'Nisha',103),
+(1004,'Nisha',103);
